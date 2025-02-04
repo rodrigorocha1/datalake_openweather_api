@@ -1,12 +1,7 @@
-try:
-    import os
-    import sys
-    sys.path.insert(0, os.path.abspath(os.curdir))
-except:
-    pass
+
 from hooks.openweaterhook import OpenWeatherHook
 from operators.openweatheroperator import OpenWeatherOperator
-from src.dados.iinfra_dados import IinfraDados
+from dags.dados.iinfra_dados import IinfraDados
 
 
 class TempoAgoraOperator(OpenWeatherOperator):

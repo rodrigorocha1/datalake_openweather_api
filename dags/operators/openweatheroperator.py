@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Dict
 from airflow.models import BaseOperator
-from src.dados.iinfra_dados import IinfraDados
+from dags.dados.iinfra_dados import IinfraDados
 from hooks.openweaterhook import OpenWeatherHook
 
 
