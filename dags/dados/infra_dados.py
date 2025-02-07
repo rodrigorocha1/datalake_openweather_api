@@ -10,7 +10,8 @@ class InfraDados(IinfraDados):
         diretorio_datalake: str,
         diretorio_camada: str,
         diretorio_municipio: str,
-        diretorio_data: str
+        diretorio_data: str,
+        nome_arquivo: str
     ) -> None:
 
         self.__cliente_hdfs = InsecureClient(
@@ -22,6 +23,7 @@ class InfraDados(IinfraDados):
         self._diretorio_camada = diretorio_camada
         self._diretorio_municipio = diretorio_municipio
         self._diretorio_data = diretorio_data
+        self._nome_arquivo = nome_arquivo
 
         self._diretorio_completo = os.path.join(
             self._diretorio_base,
