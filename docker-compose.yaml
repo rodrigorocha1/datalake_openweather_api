@@ -16,6 +16,8 @@ x-airflow-common:
     AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
     AIRFLOW__LOGGING__LOGGING_LEVEL: "INFO"
     _PIP_ADDITIONAL_REQUIREMENTS: "apache-airflow-providers-microsoft-mssql==3.6.0"
+    # AIRFLOW_CONN_HDFS_DEFAULT: "hdfs://namenode:9000"
+    # AIRFLOW_CONN_HIVE_DEFAULT: "hive://hive-server:10000/default"
 
   volumes:
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags

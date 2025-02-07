@@ -1,4 +1,5 @@
 from dags.dados.iinfra_dados import IinfraDados
+from hdfs import InsecureClient
 import os
 
 
@@ -19,7 +20,11 @@ class InfraDados(IinfraDados):
             metricas (str): métrica de análise
             nome_arquivo (str): nome_arquivo
         """
-        self._diretorio_base = os.getcwd()
+        self.__cliente_hdfs = InsecureClient(
+            'http://172.20.0.3:50070',
+            user='hadoop'
+        )
+        self._diretorio_base = self.__cliente_hdfs.url
         self._diretorio_datalake = diretorio_datalake
         self._path_extracao = path_extracao
         self._metricas = metricas

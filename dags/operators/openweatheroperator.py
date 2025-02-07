@@ -1,8 +1,14 @@
-from abc import ABC, abstractmethod
-from typing import Dict
-from airflow.models import BaseOperator
-from dags.dados.iinfra_dados import IinfraDados
+try:
+    import sys
+    import os
+    sys.path.insert(0, os.path.abspath(os.curdir))
+except ModuleNotFoundError:
+    pass
 from hooks.openweaterhook import OpenWeatherHook
+from dags.dados.iinfra_dados import IinfraDados
+from airflow.models import BaseOperator
+from typing import Dict
+from abc import ABC, abstractmethod
 
 
 class OpenWeatherOperator(BaseOperator, ABC):
